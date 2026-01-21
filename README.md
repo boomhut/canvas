@@ -2,15 +2,15 @@
 
 *** **FUNDING REQUIRED** *** **please contact me to support this work**
 
-[![API reference](https://img.shields.io/badge/godoc-reference-5272B4)](https://pkg.go.dev/github.com/tdewolff/canvas?tab=doc) [![User guide](https://img.shields.io/badge/user-guide-5272B4)](https://github.com/tdewolff/canvas/wiki) [![Go Report Card](https://goreportcard.com/badge/github.com/tdewolff/canvas)](https://goreportcard.com/report/github.com/tdewolff/canvas) [![Coverage Status](https://coveralls.io/repos/github/tdewolff/canvas/badge.svg?branch=master)](https://coveralls.io/github/tdewolff/canvas?branch=master)
+[![API reference](https://img.shields.io/badge/godoc-reference-5272B4)](https://pkg.go.dev/github.com/boomhut/canvas?tab=doc) [![User guide](https://img.shields.io/badge/user-guide-5272B4)](https://github.com/boomhut/canvas/wiki) [![Go Report Card](https://goreportcard.com/badge/github.com/boomhut/canvas)](https://goreportcard.com/report/github.com/boomhut/canvas) [![Coverage Status](https://coveralls.io/repos/github/tdewolff/canvas/badge.svg?branch=master)](https://coveralls.io/github/tdewolff/canvas?branch=master)
 
-**[API documentation](https://pkg.go.dev/github.com/tdewolff/canvas?tab=doc)**
+**[API documentation](https://pkg.go.dev/github.com/boomhut/canvas?tab=doc)**
 
-**[User guide](https://github.com/tdewolff/canvas/wiki)**
+**[User guide](https://github.com/boomhut/canvas/wiki)**
 
 **[Live HTMLCanvas demo](https://tdewolff.github.io/canvas/examples/html-canvas/index.html)**
 
-**[Benchmarks](https://github.com/tdewolff/canvas_benchmarks)**
+**[Benchmarks](https://github.com/boomhut/canvas_benchmarks)**
 
 Canvas is a common vector drawing target that can output SVG, PDF, EPS, raster images (PNG, JPG, GIF, ...), HTML Canvas through WASM, OpenGL, and Gio. It has a wide range of path manipulation functionality such as flattening, stroking and dashing implemented. Additionally, it has a text formatter and embeds and subsets fonts (TTF, OTF, WOFF, WOFF2, or EOT) or converts them to outlines. It can be considered a Cairo or node-canvas alternative in Go. See the example below in Figure 1 for an overview of the functionality.
 
@@ -32,15 +32,15 @@ Canvas is a common vector drawing target that can output SVG, PDF, EPS, raster i
 ## State
 Whether this library is ready for production environments is up to your own judgment. In general, this library is written thoughtfully and complete, but the scope of this work is so big and the implementation can be quite complex that inevitably it must have a great amount of bugs. Effort was put in writing unit and fuzz tests so that I suspect only special use-cases will stumble into bugs, but coverage is still lacking. As time permits, work is done to flesh-out functionality, find bugs, and optimize code. Optimization could be in execution time / reducing code complexity, reducing memory footprint, or reducing the length of paths from operation.
 
-Execution performance is actually really good, especially the rasterizer is highly optimized with ASM. See for example a comparison of an extreme case in https://github.com/tdewolff/canvas/issues/280#issuecomment-1995990038, where this library is at least twice as fast as existing solutions, and can handle bigger images than the likes of Inkscape and Cairo.
+Execution performance is actually really good, especially the rasterizer is highly optimized with ASM. See for example a comparison of an extreme case in https://github.com/boomhut/canvas/issues/280#issuecomment-1995990038, where this library is at least twice as fast as existing solutions, and can handle bigger images than the likes of Inkscape and Cairo.
 
 The path intersection code and path boolean operation code is quite complete and fast, and more importantly has a time complexity of O(n log n). It is numerically stable and does not suffer from floating-point precision errors.
 
-Please issue bug reports or feature requests to help this library mature! All help is appreciated. Also see [Wiki - Planning](https://github.com/tdewolff/canvas/wiki/Planning) for an inexhaustive list of ideas and TODOs.
+Please issue bug reports or feature requests to help this library mature! All help is appreciated. Also see [Wiki - Planning](https://github.com/boomhut/canvas/wiki/Planning) for an inexhaustive list of ideas and TODOs.
 
 ## Features
 ### General
-- Path segment types: MoveTo, LineTo, QuadTo, CubeTo, ArcTo, Close (see [Paths](https://github.com/tdewolff/canvas/wiki/Paths))
+- Path segment types: MoveTo, LineTo, QuadTo, CubeTo, ArcTo, Close (see [Paths](https://github.com/boomhut/canvas/wiki/Paths))
 - Precise path flattening, stroking, and dashing for all segment types (see papers below)
 - Smooth spline generation through points for open and closed paths
 - LaTeX to path conversion (native Go and CGO implementations available)
@@ -61,7 +61,7 @@ Additionally, it has bindings to be used as renderer for:
 - [go-chart](https://github.com/wcharczuk/go-chart)
 - [gonum/plot](https://github.com/gonum/plot)
 
-See [Renderers](https://github.com/tdewolff/canvas/wiki/Renderers) for more information.
+See [Renderers](https://github.com/boomhut/canvas/wiki/Renderers) for more information.
 
 ### Stable path boolean operations
 Numerically stable (!) path boolean operations, supporting AND, OR, XOR, NOT, and DIV operations in `O((n+k) log n)`, with `n` the number of segments and `k` the number of intersections. This is very fast and allows handling huge paths. It uses 64-bit floating-point precision for highly accurate computation and employs an additional strategy to ensure numerical stability. In particular:
@@ -80,9 +80,9 @@ Numerical stability refers to cases where two segments are extremely close where
 
 Correctness and performance has been tested by drawing all land masses and islands from OpenStreetMap at various scales, which is a huge input (1 GB of compressed Shape files) with extremely degenerate data (many overlapping segments, overlapping points, vertical segments, self-intersections, extremely close intersections, different contour orientations, and so on).
 
-See [Benchmarks](https://github.com/tdewolff/canvas_benchmarks) for a comparison with other libraries.
+See [Benchmarks](https://github.com/boomhut/canvas_benchmarks) for a comparison with other libraries.
 
-See [Boolean operations](https://github.com/tdewolff/canvas/wiki/Boolean-operations) for more information.
+See [Boolean operations](https://github.com/boomhut/canvas/wiki/Boolean-operations) for more information.
 
 ### Advanced text rendering
 High-quality (comparable to TeX) text rendering and line breaking. It uses HarfBuzz for text shaping (native Go and CGO implementations available) and FriBidi for text bidirectionality (native Go and CGO implementations available), and uses Donald Knuth's line breaking algorithm for text layout. This enables the following features:
@@ -92,31 +92,31 @@ High-quality (comparable to TeX) text rendering and line breaking. It uses HarfB
 - Handle left-to-right, right-to-left, or top-to-bottom/bottom-to-top writing systems.
 - Mix scripts and fonts in a single line, eg. combine latin and arabic, or bold and regular styles.
 
-Additionally, many font formats are supported (such as TTF, OTF, WOFF, WOFF2, EOT) and rendering can apply a gamma correction of 1.43 for better results. See [Fonts & Text](https://github.com/tdewolff/canvas/wiki/Fonts-&-Text) for more information.
+Additionally, many font formats are supported (such as TTF, OTF, WOFF, WOFF2, EOT) and rendering can apply a gamma correction of 1.43 for better results. See [Fonts & Text](https://github.com/boomhut/canvas/wiki/Fonts-&-Text) for more information.
 
 ## Examples
 
-**[Amsterdam city centre](https://github.com/tdewolff/canvas/tree/master/examples/amsterdam-centre)**: the centre of Amsterdam is drawn from data loaded from the Open Street Map API.
+**[Amsterdam city centre](https://github.com/boomhut/canvas/tree/master/examples/amsterdam-centre)**: the centre of Amsterdam is drawn from data loaded from the Open Street Map API.
 
-**[Chile over Europe](https://github.com/tdewolff/canvas/tree/master/examples/chile)**: the size of Chile overlaying Europe in their respective UTM projections.
+**[Chile over Europe](https://github.com/boomhut/canvas/tree/master/examples/chile)**: the size of Chile overlaying Europe in their respective UTM projections.
 
-**[Mauna-Loa CO2 concentration](https://github.com/tdewolff/canvas/tree/master/examples/co2-mauna-loa)**: using data from the Mauna-Loa observatory, carbon dioxide concentrations over time are drawn
+**[Mauna-Loa CO2 concentration](https://github.com/boomhut/canvas/tree/master/examples/co2-mauna-loa)**: using data from the Mauna-Loa observatory, carbon dioxide concentrations over time are drawn
 
-**[Text document](https://github.com/tdewolff/canvas/tree/master/examples/text-document)**: an example of a text document using the PDF backend.
+**[Text document](https://github.com/boomhut/canvas/tree/master/examples/text-document)**: an example of a text document using the PDF backend.
 
-**[OpenGL](https://github.com/tdewolff/canvas/tree/master/examples/opengl)**: an example using the OpenGL backend.
+**[OpenGL](https://github.com/boomhut/canvas/tree/master/examples/opengl)**: an example using the OpenGL backend.
 
-**[Gio](https://github.com/tdewolff/canvas/tree/master/examples/gio)**: an example using the Gio backend.
+**[Gio](https://github.com/boomhut/canvas/tree/master/examples/gio)**: an example using the Gio backend.
 
-**[Fyne](https://github.com/tdewolff/canvas/tree/master/examples/fyne)**: an example using the Fyne backend.
+**[Fyne](https://github.com/boomhut/canvas/tree/master/examples/fyne)**: an example using the Fyne backend.
 
-**[TeX/PGF](https://github.com/tdewolff/canvas/tree/master/examples/tex)**: an example showing the usage of the PGF (TikZ) LaTeX package as renderer in order to generated a PDF using LaTeX.
+**[TeX/PGF](https://github.com/boomhut/canvas/tree/master/examples/tex)**: an example showing the usage of the PGF (TikZ) LaTeX package as renderer in order to generated a PDF using LaTeX.
 
-**[go-chart](https://github.com/tdewolff/canvas/tree/master/examples/go-chart)**: an example using the [go-chart](https://github.com/wcharczuk/go-chart) library, plotting a financial graph.
+**[go-chart](https://github.com/boomhut/canvas/tree/master/examples/go-chart)**: an example using the [go-chart](https://github.com/wcharczuk/go-chart) library, plotting a financial graph.
 
-**[gonum/plot](https://github.com/tdewolff/canvas/tree/master/examples/gonum-plot)**: an example using the [gonum/plot](https://github.com/gonum/plot) library.
+**[gonum/plot](https://github.com/boomhut/canvas/tree/master/examples/gonum-plot)**: an example using the [gonum/plot](https://github.com/gonum/plot) library.
 
-**[HTMLCanvas](https://github.com/tdewolff/canvas/tree/master/examples/html-canvas)**: an example using the HTMLCanvas backend, see the [live demo](https://tdewolff.github.io/canvas/examples/html-canvas/index.html).
+**[HTMLCanvas](https://github.com/boomhut/canvas/tree/master/examples/html-canvas)**: an example using the HTMLCanvas backend, see the [live demo](https://tdewolff.github.io/canvas/examples/html-canvas/index.html).
 
 ## Users
 

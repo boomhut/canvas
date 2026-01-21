@@ -7,12 +7,12 @@ import (
 	"image/color"
 	"os"
 
+	"github.com/boomhut/canvas"
+	"github.com/boomhut/canvas/renderers"
 	"github.com/paulmach/orb"
 	"github.com/paulmach/osm"
 	"github.com/paulmach/osm/osmapi"
 	"github.com/paulmach/osm/osmgeojson"
-	"github.com/tdewolff/canvas"
-	"github.com/tdewolff/canvas/renderers"
 )
 
 func main() {

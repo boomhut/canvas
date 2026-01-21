@@ -7,7 +7,7 @@ import (
 	"io"
 	"math"
 
-	"github.com/tdewolff/canvas"
+	"github.com/boomhut/canvas"
 )
 
 // TeX is a TeX/PGF renderer. Be aware that TeX/PGF does not support transparency of colors.

@@ -15,8 +15,8 @@ import (
 	"math"
 	"strings"
 
-	"github.com/tdewolff/canvas"
-	canvasText "github.com/tdewolff/canvas/text"
+	"github.com/boomhut/canvas"
+	canvasText "github.com/boomhut/canvas/text"
 	"github.com/tdewolff/font"
 )
 

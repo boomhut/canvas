@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"runtime"
 
+	"github.com/boomhut/canvas"
+	"github.com/boomhut/canvas/renderers/opengl"
 	"github.com/go-gl/gl/v3.3-core/gl"
 	"github.com/go-gl/glfw/v3.3/glfw"
-	"github.com/tdewolff/canvas"
-	"github.com/tdewolff/canvas/renderers/opengl"
 )
 
 func main() {

@@ -10,12 +10,12 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/tdewolff/canvas"
-	"github.com/tdewolff/canvas/renderers/pdf"
-	"github.com/tdewolff/canvas/renderers/ps"
-	"github.com/tdewolff/canvas/renderers/rasterizer"
-	"github.com/tdewolff/canvas/renderers/svg"
-	"github.com/tdewolff/canvas/renderers/tex"
+	"github.com/boomhut/canvas"
+	"github.com/boomhut/canvas/renderers/pdf"
+	"github.com/boomhut/canvas/renderers/ps"
+	"github.com/boomhut/canvas/renderers/rasterizer"
+	"github.com/boomhut/canvas/renderers/svg"
+	"github.com/boomhut/canvas/renderers/tex"
 	"golang.org/x/image/bmp"
 	"golang.org/x/image/tiff"
 )

@@ -7,7 +7,7 @@ To run the tests, install `go-fuzz`:
 ```
 GO111MODULE=off go get -u github.com/dvyukov/go-fuzz/go-fuzz github.com/dvyukov/go-fuzz/go-fuzz-build
 
-cd $GOPATH/github.com/tdewolff/canvas/tests/font
+cd $GOPATH/github.com/boomhut/canvas/tests/font
 
 go-fuzz-build
 go-fuzz

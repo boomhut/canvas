@@ -10,7 +10,7 @@ import (
 	"golang.org/x/image/draw"
 	"golang.org/x/image/math/f64"
 
-	"github.com/tdewolff/canvas"
+	"github.com/boomhut/canvas"
 )
 
 // TODO: add ASM optimized version for NRGBA images, since those are much faster to write as PNG

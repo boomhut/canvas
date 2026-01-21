@@ -10,7 +10,7 @@ import (
 	"gioui.org/op/clip"
 	"gioui.org/op/paint"
 
-	"github.com/tdewolff/canvas"
+	"github.com/boomhut/canvas"
 )
 
 type Gio struct {

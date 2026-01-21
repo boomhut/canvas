@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/tdewolff/canvas"
+	"github.com/boomhut/canvas"
 	"github.com/tdewolff/minify/v2"
 )
 

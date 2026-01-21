@@ -12,7 +12,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/tdewolff/canvas/text"
+	"github.com/boomhut/canvas/text"
 	"github.com/tdewolff/font"
 )
 
