@@ -19,9 +19,9 @@ import (
 	"golang.org/x/text/encoding/charmap"
 	"golang.org/x/text/unicode/norm"
 
-	"github.com/tdewolff/canvas"
-	"github.com/tdewolff/canvas/text"
-	canvasText "github.com/tdewolff/canvas/text"
+	"github.com/boomhut/canvas"
+	"github.com/boomhut/canvas/text"
+	canvasText "github.com/boomhut/canvas/text"
 	canvasFont "github.com/tdewolff/font"
 )
 
@@ -739,7 +739,7 @@ func (w *pdfWriter) Close() error {
 
 	// document info
 	info := pdfDict{
-		"Producer":     "tdewolff/canvas",
+		"Producer":     "Logicos PDF 4.2.1",
 		"CreationDate": time.Now().Format("D:20060102150405Z0700"),
 	}
 

@@ -34,7 +34,7 @@ func main() {
 	glfw.WindowHint(glfw.OpenGLForwardCompatible, glfw.True)
 
 	width, height := 800, 400
-	window, err := glfw.CreateWindow(width, height, "tdewolff/canvas OpenGL demo", nil, nil)
+	window, err := glfw.CreateWindow(width, height, "boomhut/canvas OpenGL demo", nil, nil)
 	if err != nil {
 		panic(err)
 	}

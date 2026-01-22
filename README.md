@@ -1,8 +1,8 @@
-![Canvas](https://raw.githubusercontent.com/tdewolff/canvas/master/resources/title/title.png)
+![Canvas](https://raw.githubusercontent.com/boomhut/canvas/master/resources/title/title.png)
 
 *** **FUNDING REQUIRED** *** **please contact me to support this work**
 
-[![API reference](https://img.shields.io/badge/godoc-reference-5272B4)](https://pkg.go.dev/github.com/boomhut/canvas?tab=doc) [![User guide](https://img.shields.io/badge/user-guide-5272B4)](https://github.com/boomhut/canvas/wiki) [![Go Report Card](https://goreportcard.com/badge/github.com/boomhut/canvas)](https://goreportcard.com/report/github.com/boomhut/canvas) [![Coverage Status](https://coveralls.io/repos/github/tdewolff/canvas/badge.svg?branch=master)](https://coveralls.io/github/tdewolff/canvas?branch=master)
+[![API reference](https://img.shields.io/badge/godoc-reference-5272B4)](https://pkg.go.dev/github.com/boomhut/canvas?tab=doc) [![User guide](https://img.shields.io/badge/user-guide-5272B4)](https://github.com/boomhut/canvas/wiki) [![Go Report Card](https://goreportcard.com/badge/github.com/boomhut/canvas)](https://goreportcard.com/report/github.com/boomhut/canvas) [![Coverage Status](https://coveralls.io/repos/github/boomhut/canvas/badge.svg?branch=master)](https://coveralls.io/github/boomhut/canvas?branch=master)
 
 **[API documentation](https://pkg.go.dev/github.com/boomhut/canvas?tab=doc)**
 
@@ -14,7 +14,7 @@
 
 Canvas is a common vector drawing target that can output SVG, PDF, EPS, raster images (PNG, JPG, GIF, ...), HTML Canvas through WASM, OpenGL, and Gio. It has a wide range of path manipulation functionality such as flattening, stroking and dashing implemented. Additionally, it has a text formatter and embeds and subsets fonts (TTF, OTF, WOFF, WOFF2, or EOT) or converts them to outlines. It can be considered a Cairo or node-canvas alternative in Go. See the example below in Figure 1 for an overview of the functionality.
 
-![Preview](https://raw.githubusercontent.com/tdewolff/canvas/master/resources/preview/preview.png)
+![Preview](https://raw.githubusercontent.com/boomhut/canvas/master/resources/preview/preview.png)
 
 **Figure 1**: top-left you can see text being fitted into a box, justified using Donald Knuth's linea breaking algorithm to stretch the spaces between words to fill the whole width. You can observe a variety of styles and text decorations applied, as well as support for LTR/RTL mixing and complex scripts. In the bottom-right the word "stroke" is being stroked and drawn as a path. Top-right we see a LaTeX formula that has been converted to a path. Left of that we see an ellipse showcasing precise dashing, notably the length of e.g. the short dash is equal wherever it is on the curve. Note that the dashes themselves are elliptical arcs as well (thus exactly precise even if magnified greatly). To the right we see a closed polygon of four points being smoothed by cubic Béziers that are smooth along the whole path, and the blue line on the left shows a smoothed open path. On the bottom you can see a rotated rasterized image. The bottom-left shows path boolean operations. The result is equivalent for all renderers (PNG, PDF, SVG, etc.).
 
